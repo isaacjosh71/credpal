@@ -13,23 +13,7 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  // bool circular = true;
-  // NetworkHandle networkHandle = NetworkHandle();
-  // Data data = Data();
-  //
-  // @override
-  // void initState() {
-  //   fetchProfile();
-  //   super.initState();
-  // }
-  //
-  // void fetchProfile() async{
-  //   var response = await networkHandle.get('/patient/profile');
-  //   setState((){
-  //     data = Data.fromJson(jsonDecode(response));
-  //     circular = false;
-  //   });
-  // }
+
 
   @override
   Widget build(BuildContext context) {

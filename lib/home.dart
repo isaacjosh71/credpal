@@ -66,25 +66,31 @@ class _HomeState extends State<Home> {
             backgroundColor: Color(kLight.value),
             elevation: 0,
             automaticallyImplyLeading: false,
-            leadingWidth: 32.w,
-            leading: Text('Hi, Olorunfemi',
-              textAlign: TextAlign.center,
-              style: appstyle(16.sp, Color(kDarkText.value), FontWeight.w800),),
+            title: Padding(
+              padding: EdgeInsets.only(left: 32.w),
+              child: Text('Hi, Olorunfemi',
+                textAlign: TextAlign.center,
+                style: appstyle(16.sp, Color(kDarkText.value), FontWeight.w700),),
+            ),
             actions: [
-              Row(
-                children: [
-                  CircleAvatar(
-                    radius: 40.r,
-                    child: SvgPicture.asset('assets/svg/Frame 37694.svg'),
-                  ),
-                  CircleAvatar(
-                    radius: 40.r,
-                    child: SvgPicture.asset('assets/svg/Vector.svg'),
-                  ),
-                ],
+              Padding(
+                padding:  EdgeInsets.only(right: 24.w),
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 20.r,
+                      child: SvgPicture.asset('assets/svg/Frame 37694.svg'),
+                    ),
+                    SizedBox(width: 8.w,),
+                    CircleAvatar(
+                      radius: 20.r,
+                      child: SvgPicture.asset('assets/svg/Vector.svg'),
+                    ),
+                  ],
+                ),
               )
             ],
-            centerTitle: true,
+            centerTitle: false,
           )),
       body: SafeArea(child: SingleChildScrollView(
         child: Padding(padding: EdgeInsets.symmetric(horizontal: 24.w),
@@ -95,13 +101,16 @@ class _HomeState extends State<Home> {
             SizedBox(height: 30.h,),
             SizedBox(
               height: 76.h,
+              width: 365.w,
               child: ListView.builder(
                   physics: const ScrollPhysics(),
                   itemCount: options.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index){
                     return Container(
-                      height: 75.h, width: 80.w,
+                      height: 75.h, width: 65.w,
+                      margin: EdgeInsets.only(right: 15.w),
+                      padding: EdgeInsets.symmetric(vertical: 18.h),
                       decoration: BoxDecoration(
                         color: Color(kGreyLight.value),
                         borderRadius: BorderRadius.all(Radius.circular(6.r))
@@ -110,7 +119,6 @@ class _HomeState extends State<Home> {
                         child: Column(
                           children: [
                             Image.asset(options[index]['img'], width: 25.w,height: 25.h,),
-                            SizedBox(height: 3.h,),
                             Text(options[index]['text'], style: appstyle(10.sp, Color(kDarkText.value), FontWeight.w600),)
                           ],
                         ),
@@ -134,9 +142,9 @@ class _HomeState extends State<Home> {
                     text: TextSpan(
                       children: [
                         TextSpan(text: 'Save & invest',
-                          style: appstyle(10.sp, Colors.blue, FontWeight.w500),),
+                          style: appstyle(8.sp, Colors.blue, FontWeight.w500),),
                         TextSpan(text: ' more to unlock higher credit limit & 0% interest',
-                          style: appstyle(10.sp, Color(kDark.value), FontWeight.w500),),
+                          style: appstyle(8.sp, Color(kDark.value), FontWeight.w500),),
                       ],
                     ),),
                 ],
@@ -146,7 +154,9 @@ class _HomeState extends State<Home> {
             SizedBox(height: 30.h,),
             SizedBox(height: 285.h,
              child: GridView.count(
-              crossAxisCount: 2, // Number of columns
+              crossAxisCount: 2,
+               mainAxisSpacing: 15,
+               crossAxisSpacing: 15,// Number of columns
               children: List.generate(
                   items.length, (index) {
                 return Container(
@@ -168,7 +178,7 @@ class _HomeState extends State<Home> {
                         SizedBox(height: 30.h,),
                         Text(items[index]['text'], style: appstyle(11.sp, Color(kLight.value), FontWeight.w500),),
                       ],
-                    ),
+                    ),    
                   ),
                 );
               }),

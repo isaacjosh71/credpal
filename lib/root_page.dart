@@ -44,24 +44,24 @@ class _RootPageState extends State<RootPage> {
     ];
 
     List pages = [
-      'assets/svg/home.svg',
-      'assets/svg/shop.svg',
-      'assets/svg/shopping-bag.svg',
-      'assets/svg/wallet-3.svg',
-      'assets/svg/element-3.svg',
+      'Home',
+      'Shopping',
+      'Invest',
+      'Payment',
+      'Menu',
     ];
     return Container(
       width: double.infinity,
-      height: 86.h,
+      height: 67.h,
       decoration: BoxDecoration(
         color: Color(kLight.value),
       ),
       child: Padding(
         padding:  EdgeInsets.only(
-          top: 17.h,
+          top: 10.h,
           left: 24.w,
           right: 24.w,
-          bottom: 23.h,
+           bottom: 7.h
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,12 +79,11 @@ class _RootPageState extends State<RootPage> {
                     bottomNavigation[index],
                     height: 30.h, width: 30.w,
                     color: pageIndex == index ?
-                    const Color(0xFF1A1A1A) : const Color(0XFF5C5C8A),
+                    const Color(0xFF1A1A1A) : null,
                   ),
                   SizedBox(height: 5.h,),
-                  Text(pages[index], style: appstyle(10.sp,
-                      pageIndex == index ? const Color(0xFF1A1A1A) : const Color(0XFF5C5C8A),
-                      FontWeight.w500),)
+                  Text(pages[index], style:
+                  TextStyle(fontSize: 10.sp, fontWeight: FontWeight.w500, color:  pageIndex == index ? const Color(0xFF1A1A1A) : null,))
                 ],
               ),
             ),),

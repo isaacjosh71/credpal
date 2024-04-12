@@ -77,7 +77,7 @@ class _RootPageState extends State<RootPage> {
                 children: [
                   SvgPicture.asset(
                     bottomNavigation[index],
-                    height: 32.h, width: 32.w,
+                    height: 30.h, width: 30.w,
                     color: pageIndex == index ?
                     const Color(0xFF1A1A1A) : const Color(0XFF5C5C8A),
                   ),

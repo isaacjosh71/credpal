@@ -32,6 +32,31 @@ class _HomeState extends State<Home> {
     }
   ];
 
+  List items = [
+    {
+      'percent': '0%',
+      'title':'Credit Card',
+      'text':'Quick credit anytime',
+      'color': const Color(0xFF4E71FD),
+    },{
+      'percent': '+18%',
+      'title':'Investment',
+      'text':'Safe and secure',
+      'color': const Color(0xFF4E71FD),
+    },{
+      'percent': '0%',
+      'title':'Buy now',
+      'text':'Shop and spread payment',
+      'color': const Color(0xFF4E71FD),
+    },{
+      'percent': '0%',
+      'title':'Savings',
+      'text':'Earn up to 9%',
+      'color': const Color(0xFF4E71FD),
+    },
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,7 +143,37 @@ class _HomeState extends State<Home> {
               ),
               ),
             ),
-
+            SizedBox(height: 30.h,),
+            SizedBox(height: 285.h,
+             child: GridView.count(
+              crossAxisCount: 2, // Number of columns
+              children: List.generate(
+                  items.length, (index) {
+                return Container(
+                  width: 175.w,
+                  height: 135.h,
+                  decoration: BoxDecoration(
+                    color: items[index]['color'],
+                    borderRadius: BorderRadius.all(Radius.circular(6.r))
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(vertical: 17.h, horizontal: 21.w),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(items[index]['percent'], style: appstyle(16.sp, Color(kLight.value), FontWeight.w400),),
+                        SizedBox(height: 2.h,),
+                        Text(items[index]['title'], style: appstyle(16.sp, Color(kLight.value), FontWeight.w500),),
+                        SizedBox(height: 30.h,),
+                        Text(items[index]['text'], style: appstyle(11.sp, Color(kLight.value), FontWeight.w500),),
+                      ],
+                    ),
+                  ),
+                );
+              }),
+            ),
+            ),
           ],
         ),
         ),

@@ -57,21 +57,20 @@ class _MenuState extends State<Menu> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    GestureDetector(
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          // SvgPicture.asset(
-                          //   'assets/svg/person.svg',
-                          //   height: 22.h, width: 22.w,
-                          // ),
-                          // SizedBox(width: 8.w,),
-                          Text('Edit Profile', style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xFF1F1F1F),
-                              fontSize: 16.sp),)
-                        ],
-                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Image.asset(
+                        //   'assets/svg/person.svg',
+                        //   height: 22.h, width: 22.w,
+                        // ),
+                        // SizedBox(width: 8.w,),
+                        Text('Edit Profile', style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF1F1F1F),
+                            fontSize: 16.sp),)
+                      ],
                     ),
                     GestureDetector(
                       child: Row(
@@ -177,6 +176,18 @@ class _MenuState extends State<Menu> {
                         ],
                       ),
                     ),
+                    SizedBox(height: 150.h,),
+                    Align(
+                      alignment: Alignment.center,
+                      child: Container(
+                        height: 50.h, width: 366.w,
+                        decoration: BoxDecoration(
+                          color: Color(0xFFFE2B5E).withOpacity(0.15),
+                          borderRadius: BorderRadius.all(Radius.circular(2.r))
+                        ),
+                        child: Center(child: Text('Sign Out', style: appstyle(16.sp, Color(0xFFFF5959), FontWeight.w900),)),
+                      ),
+                    )
                   ],
                 ),
               )
